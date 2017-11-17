@@ -61,6 +61,7 @@ export default class App extends Component{
     onSelect = ( elt, order )=>{
         let {selected} = this.state;
         // 当前类型是否已选择
+
         let inThere = selected.some( (item)=> item.order===order );
 
         if(inThere){

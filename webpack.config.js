@@ -5,7 +5,6 @@ const CleanFolder = require('clean-webpack-plugin');
 
 const rv = (...a)=>path.resolve(__dirname,...a);
 
-
 module.exports = {
     entry: {
         app: './src/app.js'
