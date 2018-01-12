@@ -1,7 +1,6 @@
 import Rate from './component/rate';
 import {Radio, Input, InputNumber } from 'antd';
 
-
 const RadioGroup = Radio.Group;
 
 class App extends Component{
@@ -9,10 +8,10 @@ class App extends Component{
         super(props);
         this.state = {
             allowClear: false,
-            allowHalf: false,
+            allowHalf: true,
             character: undefined,
             count: 5,
-            defaultValue: 2,
+            defaultValue: 3.5,
             value: '',
         }
     }
@@ -35,7 +34,7 @@ class App extends Component{
         return (
             <div style={{margin: 150}}>
                 <div>
-                    是否能点击清除: &nbsp;&nbsp;
+                    allowClear：是否能点击清除: &nbsp;&nbsp;
                     <RadioGroup onChange={(e)=>this.onChange('allowClear',e.target.value)} value={allowClear}>
                         <Radio value={false}>false</Radio>
                         <Radio value={true}>true</Radio>
@@ -43,7 +42,7 @@ class App extends Component{
                 </div>
                 <br/>
                 <div>
-                    是否允许评半星: &nbsp;&nbsp;
+                    allowHalf：是否允许评半星: &nbsp;&nbsp;
                     <RadioGroup onChange={(e)=>this.onChange('allowHalf',e.target.value)} value={allowHalf}>
                         <Radio value={false}>false</Radio>
                         <Radio value={true}>true</Radio>
@@ -51,7 +50,7 @@ class App extends Component{
                 </div>
                 <br/>
                 <div>
-                    星星替换为其它字符: &nbsp;&nbsp;
+                    character：星星替换为其它字符: &nbsp;&nbsp;
                     <Input
                         value={character}
                         onChange={(e)=>this.onChange('character',e.target.value)}
@@ -61,7 +60,7 @@ class App extends Component{
                 </div>
                 <br/>
                 <div>
-                    星星数量: &nbsp;&nbsp;
+                    count：星星数量: &nbsp;&nbsp;
                     <InputNumber
                         value={count}
                         onChange={(value)=>this.onChange('count',value)}
@@ -73,7 +72,7 @@ class App extends Component{
                 </div>
                 <br/>
                 <div>
-                    默认值分值，调整它将不会更新: &nbsp;&nbsp;
+                    defaultValue：默认值分值，调整它将不会更新: &nbsp;&nbsp;
                     <InputNumber
                         value={defaultValue}
                         onChange={(value)=>this.onChange('defaultValue',value)}
@@ -85,7 +84,7 @@ class App extends Component{
                 </div>
                 <br/>
                 <div>
-                    分值, 受控,调整它会更新: &nbsp;&nbsp;
+                    value：分值, 受控,调整它会更新: &nbsp;&nbsp;
                     <InputNumber
                         value={value}
                         onChange={(value)=>this.onChange('value',value)}

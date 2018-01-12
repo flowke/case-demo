@@ -8,6 +8,8 @@ export default class Rate extends Component{
         let applyValue = value !== undefined ? value : defaultValue;
         let info = this.getSizeInfoFromeValue(allowHalf, applyValue);
 
+        // fullSize 用来记录目前这个时刻应该填充几个星星
+        // rateSize 用来记录之前被点击的星星，也就是被记录下的星值
         this.state = {
             fullSize: info,
             rateSize: info,
@@ -24,13 +26,25 @@ export default class Rate extends Component{
         className: '',
         value: undefined,
         onChange: f=>f,
-        onHoverChange: f=>f,
     }
 
     static propTypes = {
-        allowHalf: PT.bool
+        character: PT.oneOfType([
+            PT.string,
+            PT.number,
+            PT.element
+        ]),
+        allowHalf: PT.bool,
+        value: PT.number,
+        allowClear: PT.bool,
+        disabled: PT.bool,
+        count: PT.number,
+        defaultValue: PT.number,
+        className: PT.string,
+        onChange: PT.func
     }
 
+    // 当组件初始化，或组件更新时，它用于提供应当修改成什么评星值
     getSizeInfoFromeValue(allowHalf,value){
 
         let size = Math.floor(value);
@@ -40,6 +54,7 @@ export default class Rate extends Component{
 
         return {size, isHalf};
     }
+
 
     getStartHandlers=(handlers)=>{
         let {allowHalf, disabled} = this.props;
@@ -54,12 +69,26 @@ export default class Rate extends Component{
         return allowHalf && !disabled ? {...handlers} : undefined;
     }
 
+    // 检测 vale prop 的变化
     componentWillReceiveProps(nP){
 
-        if(nP.value!==this.props.value){
+        if(
+            (nP.value !== undefined && nP.value!==this.props.value)
+            || nP.allowHalf !== this.props.allowHalf
+        ){
 
             let {allowHalf, value} = nP;
-            let info = this.getSizeInfoFromeValue(allowHalf, value);
+
+            let controlValue = value;
+
+            if(nP.value===undefined && this.state.rateSize.isHalf){
+                controlValue = this.state.rateSize.size;
+            }
+            if(nP.value===undefined && !this.state.rateSize.isHalf){
+                controlValue = this.state.rateSize.size+1;
+            }
+
+            let info = this.getSizeInfoFromeValue(allowHalf, controlValue);
 
             this.setState({
                 fullSize: info,
@@ -68,10 +97,11 @@ export default class Rate extends Component{
         }
     }
 
+    // hover 到某个星星
     handleStarHover = (size,isHalf=false)=>{
         this.setState({fullSize: {size,isHalf}});
     }
-
+    // 点击要记录评星
     handleRateSize = (size,isHalf=false)=>{
 
         let {allowClear, onChange} = this.props;
@@ -88,7 +118,15 @@ export default class Rate extends Component{
                 fullSize:sizeInfo
             });
 
-            onChange(sizeInfo.size+1);
+            let resSize = 0;
+
+            if(isHalf){
+                resSize = sizeInfo.size + 0.5;
+            }else{
+                resSize = sizeInfo.size + 1;
+            }
+
+            onChange(resSize);
     }
 
     render(){
