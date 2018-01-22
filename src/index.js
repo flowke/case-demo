@@ -20,7 +20,20 @@ export default class App extends Component{
       super(props);
   }
 
+  componentDidMount(){
+    // this.props.history.push({
+    //   pathname: '/infinite',
+    //   hash: "infinite"
+    // })
+  }
+
   render(){
+    let {location, match} = this.props;
+
+    let key = location.hash || '#infinite';
+
+    key = key.slice(1);
+
     return (
       <div>
         <Layout style={{height: '100vh'}}>
@@ -28,11 +41,15 @@ export default class App extends Component{
             <Menu
               style={{height: '100vh'}}
               {...{
-                defaultSelectedKeys: ["1"]
+                defaultSelectedKeys: [key]
               }}
             >
-              <Item key="1"><Link to="/infinite">无限路由</Link></Item>
-              <Item key="0"><Link to="/rate">评星</Link></Item>
+              <Item key="infinite">
+                <Link to={{pathname:"/infinite",hash:"infinite"}}>无限路由</Link>
+              </Item>
+              <Item key="rate">
+                <Link to={{pathname:"/rate",hash:"rate"}}>评星</Link>
+              </Item>
             </Menu>
           </Sider>
           <Content >
@@ -62,7 +79,7 @@ export default class App extends Component{
 
 ReactDOM.render(
   <HashRouter>
-    <App/>
+    <Route component={App}/>
   </HashRouter>
 
   ,

@@ -6,7 +6,7 @@ const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const ClosureCompilerPlugin = require('webpack-closure-compiler');
 const webpack = require('webpack');
 console.log(process.env.NODE_ENV);
-const extractCSS = new extractTextWebpackPlugin('assets/css/[name]_[hash:6].css')
+const extractCSS = new extractTextWebpackPlugin('assets/css/[name]_[contenthash:6].css')
 
 let strategyMerge = merge.strategy({
     entry: 'replace',
