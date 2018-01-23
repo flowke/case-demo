@@ -2,8 +2,7 @@ import {Route, Link, HashRouter} from 'react-router-dom';
 
 import Code from '../code';
 import data from './data';
-import indexCode from './indexCodeString.txt';
-import dataCode from './dataCode.txt';
+
 
 
 class Persion extends Component{
@@ -65,10 +64,7 @@ export default ({match})=>{
         }
       </ul>
       <Route path={`${url}/:id`} component={Persion}/>
-      <Code data={[
-        {file: 'index.js', codeString: indexCode},
-        {file: 'data.js', codeString: dataCode}
-      ]}/>
+      <Code></Code>
     </div>
   )
 }

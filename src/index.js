@@ -57,8 +57,8 @@ export default class App extends Component{
               <Col
                 style={{marginTop: 100}}
                 {...{
-                  span: 14,
-                  push: 6
+                  span: 18,
+                  push: 3
                 }}
               >
                 <Route exact path="/" render={()=><Redirect to="/infinite"/>}/>

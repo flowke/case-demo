@@ -114,11 +114,10 @@ export default class App extends Component{
                     onChange={(value)=>this.onChange('value', value)}
                 />
                 <Code data={[
-                    {file: 'Rate.js', codeString: RateCode},
                     {file: 'index.js', codeString: indexCode},
-
+                    {file: 'Rate.js', codeString: RateCode},
                 ]}/>
             </div>
         )
     }
-}
+};
