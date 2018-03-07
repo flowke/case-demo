@@ -1,3 +1,4 @@
+
 import Rate from './Rate';
 import {Radio, Input, InputNumber } from 'antd';
 
@@ -113,11 +114,8 @@ export default class App extends Component{
                     }}
                     onChange={(value)=>this.onChange('value', value)}
                 />
-                <Code data={[
-                    {file: 'index.js', codeString: indexCode},
-                    {file: 'Rate.js', codeString: RateCode},
-                ]}/>
+
             </div>
         )
     }
-};
+}
