@@ -11,6 +11,7 @@ import {HashRouter, Link, Redirect} from 'react-router-dom';
 
 import Friends from './component/infiRoute';
 import Rate from './component/rate';
+import Drag from './component/drag';
 
 const {Sider, Content} = Layout;
 const {Item} = Menu;
@@ -50,6 +51,9 @@ export default class App extends Component{
               <Item key="rate">
                 <Link to={{pathname:"/rate",hash:"rate"}}>评星</Link>
               </Item>
+              <Item key="drag">
+                <Link to={{pathname:"/drag",hash:"drag"}}>拖拽与运动</Link>
+              </Item>
             </Menu>
           </Sider>
           <Content >
@@ -65,6 +69,7 @@ export default class App extends Component{
                 <Route path="/infinite" component={Friends}/>
 
                 <Route path="/rate" component={Rate}/>
+                <Route path="/drag" component={Drag}/>
               </Col>
             </Row>
 

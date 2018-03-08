@@ -108,15 +108,15 @@ let config = {
             {
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
                 use: [
-					{
-						loader: 'url-loader',
-						options:{
-							limit:10000,
-							name: '[name]_[hash].[ext]',
-							outputPath: 'assets/font/',
-							mimetype: 'application/octet-stream'
+						{
+							loader: 'url-loader',
+							options:{
+								limit:10000,
+								name: '[name]_[hash].[ext]',
+								outputPath: 'assets/font/',
+								mimetype: 'application/octet-stream'
+							}
 						}
-					}
 				]
             },
             {

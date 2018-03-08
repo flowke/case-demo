@@ -21,10 +21,19 @@ let config = {
             {
 				test: /\.less$/,
 				use: [
+                    "style-loader",
                     {
                         loader: 'css-loader',
                     },
                     "less-loader"
+                ]
+			},
+            {
+				test: /\.scss$/,
+				use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",
                 ]
 			},
             {
