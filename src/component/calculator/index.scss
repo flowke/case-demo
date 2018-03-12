@@ -1,0 +1,108 @@
+
+@font-face {
+  font-family: 'miz';
+  src: url('./font/dekarlight.ttf');
+  font-weight: 100;
+}
+
+.calc{
+  width: 320px;
+  height: 520;
+
+  box-shadow: 0px 0px 20px 0px #aaa;
+
+  .rultArea{
+    color: white;
+    background: #1c191c;
+    line-height: 130px;
+    font-size: 6em;
+    height: 130px;
+    flex: 1;
+    font-weight: 100;
+    text-align: right;
+    font-family:'miz';
+
+    .autoScalingText {
+      display: inline-block;
+      padding: 0 30px;
+      position: absolute;
+      right: 0;
+      transform-origin: right;
+    }
+  }
+
+  .keypad{
+    display: flex;
+    // :last-child{
+    //   border-right: none;
+    // }
+  }
+  .iptKeys{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .digitKeys{
+    font-weight: lighter;
+    font-family:'miz';
+     background: #e0e0e7;
+  }
+
+  .fnKeys{
+    background: linear-gradient(to bottom, rgba(202,202,204,1) 0%, rgba(196,194,204,1) 100%);
+  }
+
+  .digitKeys,.fnKeys{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .operatorKeys{
+    background: linear-gradient(to bottom, rgba(252,156,23,1) 0%, rgba(247,126,27,1) 100%);
+    button{
+      border-right: none;
+      color: white;
+      font-size: 3em;
+    }
+  }
+
+
+
+
+  button{
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    font-weight: 100;
+    font-size: 30px;
+
+    width: 80px;
+    height: 80px;
+    border-top: 1px solid #777;
+    border-right: 1px solid #666;
+    text-align: center;
+    line-height: 80px;
+
+    :active{
+      box-shadow: inset 0px 0px 80px 0px rgba(0,0,0,0.25);
+    }
+
+    &.key-0{
+      flex-grow: 1;
+
+    }
+
+    &.keyDot{
+      padding-top: 0.2em;
+      font-size: 0.75;
+      font-weight: 600;
+    }
+  }
+}

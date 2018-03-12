@@ -37,7 +37,11 @@ export default class App extends Component{
             value,
         } = this.state;
         return (
-            <div>
+            <div style={{
+                border: '1px solid #D8DFE3',
+                padding: '20px',
+                borderRadius: '10px'
+            }}>
                 <h1>评星</h1>
                 <div>
                     allowClear：是否能点击清除: &nbsp;&nbsp;
