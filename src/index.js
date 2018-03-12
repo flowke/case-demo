@@ -12,6 +12,7 @@ import {HashRouter, Link, Redirect} from 'react-router-dom';
 import Friends from './component/infiRoute';
 import Rate from './component/rate';
 import Drag from './component/drag';
+import Province from './component/province';
 
 const {Sider, Content} = Layout;
 const {Item} = Menu;
@@ -54,6 +55,9 @@ export default class App extends Component{
               <Item key="drag">
                 <Link to={{pathname:"/drag",hash:"drag"}}>拖拽与运动</Link>
               </Item>
+              <Item key="province">
+                <Link to={{pathname:"/province",hash:"province"}}>省市区联动</Link>
+              </Item>
             </Menu>
           </Sider>
           <Content >
@@ -70,6 +74,7 @@ export default class App extends Component{
 
                 <Route path="/rate" component={Rate}/>
                 <Route path="/drag" component={Drag}/>
+                <Route path="/province" component={Province}/>
               </Col>
             </Row>
 
