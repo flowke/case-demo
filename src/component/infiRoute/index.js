@@ -18,7 +18,7 @@ class Persion extends Component{
     let persion = data[params.id];
 
     return (
-      <div>
+      <div >
         <h3>{`${persion.name}的朋友:`}</h3>
         <List
           itemLayout="horizontal"
@@ -76,7 +76,11 @@ export default ({match})=>{
   let ids = Object.keys(data);
 
   return (
-    <div className="inifiRoute">
+    <div className="inifiRoute" style={{
+      border: '1px solid #D8DFE3',
+      padding: '20px',
+      borderRadius: '10px'
+    }}>
       <h1>无限路由</h1>
       <p>
         有10个人，你可以在朋友列表查看不同的人， <br/>

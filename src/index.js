@@ -12,6 +12,7 @@ import {HashRouter, Link, Redirect} from 'react-router-dom';
 import Friends from './component/infiRoute';
 import Rate from './component/rate';
 import Drag from './component/drag';
+import Calculator from './component/calculator';
 
 const {Sider, Content} = Layout;
 const {Item} = Menu;
@@ -54,9 +55,12 @@ export default class App extends Component{
               <Item key="drag">
                 <Link to={{pathname:"/drag",hash:"drag"}}>拖拽与运动</Link>
               </Item>
+              <Item key="calculator">
+                <Link to={{pathname:"/calculator",hash:"calculator"}}>IOS 计算器</Link>
+              </Item>
             </Menu>
           </Sider>
-          <Content >
+          <Content style={{background: 'white'}}>
             <Row>
               <Col
                 style={{marginTop: 100}}
@@ -70,6 +74,7 @@ export default class App extends Component{
 
                 <Route path="/rate" component={Rate}/>
                 <Route path="/drag" component={Drag}/>
+                <Route path="/calculator" component={Calculator}/>
               </Col>
             </Row>
 
