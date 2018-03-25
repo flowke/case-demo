@@ -12,10 +12,9 @@ import {HashRouter, Link, Redirect} from 'react-router-dom';
 import Friends from './component/infiRoute';
 import Rate from './component/rate';
 import Drag from './component/drag';
-
 import Province from './component/province';
-
 import Calculator from './component/calculator';
+import ScaleView from './component/scaleView';
 
 
 const {Sider, Content} = Layout;
@@ -66,6 +65,9 @@ export default class App extends Component{
               <Item key="province">
                 <Link to={{pathname:"/province",hash:"province"}}>省市区联动</Link>
               </Item>
+              <Item key="scaleView">
+                <Link to={{pathname:"/scaleView",hash:"scaleView"}}>放大镜</Link>
+              </Item>
 
             </Menu>
           </Sider>
@@ -83,10 +85,12 @@ export default class App extends Component{
 
                 <Route path="/rate" component={Rate}/>
                 <Route path="/drag" component={Drag}/>
-                
+
                 <Route path="/calculator" component={Calculator}/>
 
                 <Route path="/province" component={Province}/>
+
+                <Route path="/scaleView" component={ScaleView}/>
 
                 </Col>
               </Row>

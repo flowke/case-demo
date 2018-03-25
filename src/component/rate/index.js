@@ -105,23 +105,23 @@ export default class App extends Component{
                     />
                 </div>
                 <br/>
-                <div style={{borderTop:'1px solid rgb(221, 221, 221)',marginTop:20}}></div>
+                {/* <div style={{borderTop:'1px solid rgb(221, 221, 221)',marginTop:20}}></div> */}
                 <Rate
                     {...{
                         allowClear,
                         allowHalf,
                         count,
-                        defaultValue: defaultValue === ''? undefined : defaultValue,
-                        value: value === ''? undefined : value,
-                        character: character === ''? undefined : character,
-                    }}
-                    onChange={(value)=>this.onChange('value', value)}
-                />
-                <Code data={[
-                    {file: 'Rate.js', codeString: RateCode},
-                    {file: 'index.js', codeString: indexCode},
+                  defaultValue: defaultValue === ''? undefined : defaultValue,
+                  value: value === ''? undefined : value,
+                  character: character === ''? undefined : character,
+                }}
+                onChange={(value)=>this.onChange('value', value)}
+              />
+              {/* <Code data={[
+                {file: 'Rate.js', codeString: RateCode},
+                {file: 'index.js', codeString: indexCode},
 
-                ]}/>
+              ]}/> */}
             </div>
         )
     }

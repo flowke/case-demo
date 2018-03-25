@@ -102,10 +102,10 @@ export default ({match})=>{
         }
       </ul>
       <Route path={`${url}/:id`} component={Persion}/>
-      <Code data={[
+      {/* <Code data={[
         {file: 'index.js', codeString: indexCode},
         {file: 'data.js', codeString: dataCode}
-      ]}/>
+      ]}/> */}
     </div>
   )
 }
