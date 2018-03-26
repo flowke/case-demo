@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="dataHandle">
+    <textarea
+      rows="7"
+      class="inputArea"
+    ></textarea>
+    <button
+      class="submitButton"
+    >
+      提交
+    </button>
+    <ul class="listWrap">
+    </ul>
+  </div>
+
+<script type="text/javascript">
+  let inputArea = document.querySelector('.inputArea'),
+      submitButton = document.querySelector('.submitButton'),
+      listWrap = document.querySelector('.listWrap');
+
+  submitButton.onclick = ()=>{
+
+    if(inputArea.value.trim() !== ''){
+
+      let li = document.createElement('li'),
+          span = document.createElement('span'),
+          button = document.createElement('button');
+
+      li.appendChild(span);
+      li.appendChild(button);
+
+      span.innerText = inputArea.value.trim();
+      button.innerText = '删除';
+      button.__fnKey = 'delete';
+
+      listWrap.insertBefore( li,  listWrap.firstChild );
+      inputArea.value = '';
+    }
+  }
+
+  listWrap.onclick = (ev)=>{
+    if(ev.target.__fnKey === 'delete'){
+      listWrap.removeChild(ev.target.parentNode);
+    }
+  }
+
+</script>
+</body>
+</html>

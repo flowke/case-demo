@@ -15,6 +15,7 @@ import Drag from './component/drag';
 import Province from './component/province';
 import Calculator from './component/calculator';
 import ScaleView from './component/scaleView';
+import DataHandle from './component/dataHandle';
 
 
 const {Sider, Content} = Layout;
@@ -68,6 +69,9 @@ export default class App extends Component{
               <Item key="scaleView">
                 <Link to={{pathname:"/scaleView",hash:"scaleView"}}>放大镜</Link>
               </Item>
+              <Item key="dataHandle">
+                <Link to={{pathname:"/dataHandle",hash:"dataHandle"}}>事件委托</Link>
+              </Item>
 
             </Menu>
           </Sider>
@@ -91,6 +95,8 @@ export default class App extends Component{
                 <Route path="/province" component={Province}/>
 
                 <Route path="/scaleView" component={ScaleView}/>
+
+                <Route path="/dataHandle" component={DataHandle}/>
 
                 </Col>
               </Row>

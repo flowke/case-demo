@@ -33,7 +33,7 @@ export default class Calculator extends Component{
     let {showValue, operator, tempResult} = this.state;
     let out = showValue;
 
-    if(tempResult){
+    if(operator !== null){
       out = '0';
     }
 
