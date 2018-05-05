@@ -1,0 +1,60 @@
+.dataHandle, .dataHandle *{
+  box-sizing: border-box;
+}
+.dataHandle {
+  border: 1px solid #3DA5D9;
+  border-radius: 8px;
+  width: 360px;
+  height: 500px;
+  padding: 16px;
+}
+.dataHandle button {
+  outline: none;
+}
+.dataHandle .inputArea {
+  border-radius: 6px;
+  width: 100%;
+  border: 2px solid #D1F5FF;
+  background: #E4F6FD;
+  resize: none;
+  outline: none;
+  padding: 3px;
+}
+.dataHandle .submitButton {
+  margin-top: 10px;
+  border: 2px solid #65C0F1;
+  border-radius: 6px;
+  background: #44B9F9;
+  width: 100%;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+.dataHandle ul {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+.dataHandle li {
+  background: #E4F6FD;
+  margin-bottom: 5px;
+  list-style-position: inside;
+  padding: 6px 8px;
+  border-radius: 7px;
+  line-height: 24px;
+  color: #3FA2BD;
+}
+.dataHandle li span {
+  color: #3FA2BD;
+}
+.dataHandle li button {
+  border: 1px solid #5DE1F9;
+  border-radius: 7px;
+  float: right;
+  margin-top: -2px;
+  outline: none;
+}
+.dataHandle li button:hover {
+  color: white;
+  background: #43D8F2;
+}

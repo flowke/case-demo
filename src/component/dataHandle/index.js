@@ -59,7 +59,6 @@ export default class extends Component{
       <div className="dataHandle">
         <textarea
           rows="7"
-          outline="none"
           className="inputArea"
           value={currentVal}
           onChange={this.handleInput}
@@ -71,10 +70,13 @@ export default class extends Component{
           提交
         </button>
         <ul>
-          {dataList.map(elt=>{
+          {dataList.map((elt,i)=>{
             return (
               <li key={elt.id}>
-                <span>{elt.content}</span>
+                <span>
+                  {i+1}. &nbsp;
+                  {elt.content}
+                </span>
                 <button
                   onClick={()=>this.deleteOneData(elt.id)}
                 >删除</button>

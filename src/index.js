@@ -70,7 +70,7 @@ export default class App extends Component{
                 <Link to={{pathname:"/scaleView",hash:"scaleView"}}>放大镜</Link>
               </Item>
               <Item key="dataHandle">
-                <Link to={{pathname:"/dataHandle",hash:"dataHandle"}}>事件委托</Link>
+                <Link to={{pathname:"/dataHandle",hash:"dataHandle"}}>便笺数据处理</Link>
               </Item>
 
             </Menu>

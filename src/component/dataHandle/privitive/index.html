@@ -18,8 +18,7 @@
     >
       提交
     </button>
-    <ul class="listWrap">
-    </ul>
+    <ul class="listWrap"></ul>
   </div>
 
 <script type="text/javascript">
@@ -41,7 +40,7 @@
       span.innerText = inputArea.value.trim();
       button.innerText = '删除';
       button.__fnKey = 'delete';
-
+      console.log(listWrap.firstChild);
       listWrap.insertBefore( li,  listWrap.firstChild );
       inputArea.value = '';
     }
